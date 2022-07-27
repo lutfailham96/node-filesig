@@ -71,4 +71,4 @@ jobs:
             && mv tmp/sample.jar tmp/sample-0.jar \
             && rm tmp/sample-0.jar.zip
       - name: Run test
-        run: yarn test
+        run: yarn test:cover
