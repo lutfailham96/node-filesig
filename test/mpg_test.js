@@ -9,14 +9,14 @@ describe('Test MPG Validation', () => {
     assert.equal(valid, false);
   });
   it('should return false when input buffer is invalid MPG', () => {
-    fs.readFileSync('./tmp/sample-0.3gp', (error, invalidMpgBuffer) => {
+    fs.readFile('./tmp/sample-0.3gp', (error, invalidMpgBuffer) => {
       if (error) throw error;
       const valid = filesig.isMpg(invalidMpgBuffer);
       assert.equal(valid, false);
     });
   });
   it('should return true when input buffer is valid MPG', () => {
-    fs.readFileSync('./tmp/sample-0.mpg', (error, validMpgBuffer) => {
+    fs.readFile('./tmp/sample-0.mpg', (error, validMpgBuffer) => {
       if (error) throw error;
       const valid = filesig.isMpg(validMpgBuffer);
       assert.equal(valid, true);

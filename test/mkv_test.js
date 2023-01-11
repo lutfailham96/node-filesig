@@ -4,14 +4,14 @@ const filesig = require('../index');
 
 describe('Test MKV Validation', () => {
   it('should return false when input buffer is invalid MKV', () => {
-    fs.readFileSync('./tmp/sample-0.mp4', (error, invalidMkvBuffer) => {
+    fs.readFile('./tmp/sample-0.mp4', (error, invalidMkvBuffer) => {
       if (error) throw error;
       const valid = filesig.isMkv(invalidMkvBuffer);
       assert.equal(valid, false);
     });
   });
   it('should return true when input buffer is valid MKV', () => {
-    fs.readFileSync('./tmp/sample-0.mkv', (error, validMkvBuffer) => {
+    fs.readFile('./tmp/sample-0.mkv', (error, validMkvBuffer) => {
       if (error) throw error;
       const valid = filesig.isMkv(validMkvBuffer);
       assert.equal(valid, true);

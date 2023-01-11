@@ -4,7 +4,7 @@ const filesig = require('../index');
 
 describe('Test JAR Validation', () => {
   it('should return false when input buffer is invalid JAR', () => {
-    fs.readFileSync('./tmp/sample-0.rar', (error, invalidJarBuffer) => {
+    fs.readFile('./tmp/sample-0.rar', (error, invalidJarBuffer) => {
       if (error) throw error;
       const valid = filesig.isJar(invalidJarBuffer);
       assert.equal(valid, false);
@@ -12,7 +12,7 @@ describe('Test JAR Validation', () => {
   });
 
   it('should return true when input buffer is valid JAR', () => {
-    fs.readFileSync('./tmp/sample-0.jar', (error, validJarBuffer) => {
+    fs.readFile('./tmp/sample-0.jar', (error, validJarBuffer) => {
       if (error) throw error;
       const valid = filesig.isJar(validJarBuffer);
       assert.equal(valid, true);

@@ -4,7 +4,7 @@ const filesig = require('../index');
 
 describe('Test GZIP Validation', () => {
   it('should return false when input buffer is invalid GZIP', () => {
-    fs.readFileSync('./tmp/sample-0.zip', (error, invalidGzipBuffer) => {
+    fs.readFile('./tmp/sample-0.zip', (error, invalidGzipBuffer) => {
       if (error) throw error;
       const valid = filesig.isGzip(invalidGzipBuffer);
       assert.equal(valid, false);
@@ -12,7 +12,7 @@ describe('Test GZIP Validation', () => {
   });
 
   it('should return true when input buffer is valid GZIP', () => {
-    fs.readFileSync('./tmp/sample-0.tgz', (error, validGzipBuffer) => {
+    fs.readFile('./tmp/sample-0.tgz', (error, validGzipBuffer) => {
       if (error) throw error;
       const valid = filesig.isGzip(validGzipBuffer);
       assert.equal(valid, true);

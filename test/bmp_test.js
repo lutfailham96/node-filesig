@@ -4,14 +4,14 @@ const filesig = require('../index');
 
 describe('Test BMP Validation', () => {
   it('should return false when input buffer is invalid BMP', () => {
-    fs.readFileSync('./tmp/sample-0.svg', (error, invalidBmpBuffer) => {
+    fs.readFile('./tmp/sample-0.svg', (error, invalidBmpBuffer) => {
       if (error) throw error;
       const valid = filesig.isBmp(invalidBmpBuffer);
       assert.equal(valid, false);
     });
   });
   it('should return true when input buffer is valid BMP', () => {
-    fs.readFileSync('./tmp/sample-0.bmp', (error, validBmpBuffer) => {
+    fs.readFile('./tmp/sample-0.bmp', (error, validBmpBuffer) => {
       if (error) throw error;
       const valid = filesig.isBmp(validBmpBuffer);
       assert.equal(valid, true);
