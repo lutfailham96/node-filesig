@@ -4,7 +4,7 @@ const filesig = require('../index');
 
 describe('Test One Of Validation', () => {
   it('should return true when input buffer is valid', () => {
-    fs.readFileSync('./tmp/sample-0.png', (error, validPngBuffer) => {
+    fs.readFile('./tmp/sample-0.png', (error, validPngBuffer) => {
       if (error) throw error;
       const valid = filesig.oneOf(
         validPngBuffer,
@@ -18,7 +18,7 @@ describe('Test One Of Validation', () => {
   });
 
   it('should return false when input buffer is valid, but one of the proper functions supplied is not available', () => {
-    fs.readFileSync('./tmp/sample-0.png', (error, validPngBuffer) => {
+    fs.readFile('./tmp/sample-0.png', (error, validPngBuffer) => {
       if (error) throw error;
       const valid = filesig.oneOf(
         validPngBuffer,
@@ -32,7 +32,7 @@ describe('Test One Of Validation', () => {
   });
 
   it('should return false when input buffer is valid, but one of the proper functions supplied is not available', () => {
-    fs.readFileSync('./tmp/sample-0.png', (error, validPngBuffer) => {
+    fs.readFile('./tmp/sample-0.png', (error, validPngBuffer) => {
       if (error) throw error;
       const valid = filesig.oneOf(
         validPngBuffer,
@@ -46,7 +46,7 @@ describe('Test One Of Validation', () => {
   });
 
   it('should throw error when some functions are invalid', () => {
-    fs.readFileSync('./tmp/sample-0.jpg', (error, invalidPngBuffer) => {
+    fs.readFile('./tmp/sample-0.jpg', (error, invalidPngBuffer) => {
       if (error) throw error;
       const valid = () => {
         filesig.oneOf(
@@ -63,7 +63,7 @@ describe('Test One Of Validation', () => {
   });
 
   it('should return false when input buffer is invalid', () => {
-    fs.readFileSync('./tmp/sample-0.jpg', (error, invalidPngBuffer) => {
+    fs.readFile('./tmp/sample-0.jpg', (error, invalidPngBuffer) => {
       if (error) throw error;
       const valid = filesig.oneOf(
         invalidPngBuffer,
