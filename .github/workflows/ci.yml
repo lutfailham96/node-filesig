@@ -51,7 +51,7 @@ jobs:
             && curl -H "Cache-Control: no-cache" -H "Pragma: no-cache" -H "Expires: 0" -sLko tmp/sample-0.rtf https://filesamples.com/samples/document/rtf/sample3.rtf \
             && curl -H "Cache-Control: no-cache" -H "Pragma: no-cache" -H "Expires: 0" -sLko tmp/sample-0.mpg https://filesamples.com/samples/video/mpg/sample_640x360.mpg \
             && curl -H "Cache-Control: no-cache" -H "Pragma: no-cache" -H "Expires: 0" -sLko tmp/sample-0.flv https://filesamples.com/samples/video/flv/sample_640x360.flv \
-            && curl -H "Cache-Control: no-cache" -H "Pragma: no-cache" -H "Expires: 0" -sLko tmp/sample-0.3gp https://github.com/prof3ssorSt3v3/media-sample-files/raw/master/lion-sample.3gp \
+            && curl -H "Cache-Control: no-cache" -H "Pragma: no-cache" -H "Expires: 0" -sLko tmp/sample-0.3gp https://github.com/lutfailham96/filesig-test-files/raw/master/sample-0.3gp \
             && curl -H "Cache-Control: no-cache" -H "Pragma: no-cache" -H "Expires: 0" -sLko tmp/sample-0.mkv https://filesamples.com/samples/video/mkv/sample_640x360.mkv \
             && curl -H "Cache-Control: no-cache" -H "Pragma: no-cache" -H "Expires: 0" -sLko tmp/sample-0.swf https://filesamples.com/samples/video/swf/sample_640x360.swf \
             && curl -H "Cache-Control: no-cache" -H "Pragma: no-cache" -H "Expires: 0" -sLko tmp/sample-0.mp4 https://filesamples.com/samples/video/mp4/sample_640x360.mp4 \
