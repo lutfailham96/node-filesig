@@ -36,7 +36,8 @@ jobs:
 
       - name: Get sample files
         run: |-
-          mkdir -p tmp \
+          rm -rf tmp \
+            && mkdir -p tmp \
             && curl -H 'Cache-Control: no-cache' -sLko tmp/sample-0.mp3 https://filesamples.com/samples/audio/mp3/sample3.mp3 \
             && curl -H 'Cache-Control: no-cache' -sLko tmp/sample-0.wav https://freewavesamples.com/files/Ensoniq-ZR-76-01-Dope-77.wav \
             && curl -H 'Cache-Control: no-cache' -sLko tmp/sample-0.ogg https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg \
@@ -77,6 +78,8 @@ jobs:
             && unzip tmp/sample-0.jar.zip -d tmp \
             && mv tmp/sample.jar tmp/sample-0.jar \
             && rm tmp/sample-0.jar.zip
+      - name: Checking md5 hash test files
+        run: find tmp -type f -exec md5sum {} \;
       - name: Run test
         run: yarn run test:cover
       - name: Upload coverage to Codecov
